@@ -1,0 +1,4 @@
+#ignoring the state files
+.terraform
+*.tfstate
+*.tfstate.backup
