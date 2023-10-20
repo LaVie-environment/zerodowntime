@@ -1,5 +1,5 @@
 variable "user_names" {
   description = "The user name to use"
   type        = list(string)
-  default     = ["armzig", "zion"]
+  default     = ["armzig", "bolo", "zion"]
 }
