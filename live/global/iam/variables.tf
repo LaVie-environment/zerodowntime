@@ -1,5 +1,5 @@
-variable "user_name" {
+variable "user_names" {
   description = "The user name to use"
-  type        = string
-  default     = "armzig"
+  type        = list(string)
+  default     = ["armzig", "gachio", "zion"]
 }

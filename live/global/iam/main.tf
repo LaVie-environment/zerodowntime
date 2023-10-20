@@ -10,11 +10,11 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-west-1"
+    region = "eu-west-1"
 }
 
 resource "aws_iam_user" "user" {
-
-  name = var.user_name
+    count = length(var.user_names)
+    name = var.user_names[count.index]
 
 }
