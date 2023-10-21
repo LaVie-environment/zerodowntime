@@ -14,11 +14,6 @@ provider "aws" {
 }
 
 resource "aws_iam_user" "user" {
-    for_each = toset(var.user_names)
-    name = each.value
-}
-
-resource "aws_iam_user" "user" {
   for_each = var.module_enabled ? var.user_names : []
 
   name                 = each.key
