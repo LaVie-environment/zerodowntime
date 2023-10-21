@@ -17,3 +17,15 @@ resource "aws_iam_user" "user" {
     for_each = toset(var.user_names)
     name = each.value
 }
+
+resource "aws_iam_user" "user" {
+  for_each = var.module_enabled ? var.user_names : []
+
+  name                 = each.key
+  path                 = var.path
+  permissions_boundary = var.permissions_boundary
+  force_destroy        = var.force_destroy
+  tags                 = var.tags
+
+  depends_on = [var.module_depends_on]
+}
